@@ -1,5 +1,6 @@
 # tessdata_arabic
-Finetuned traineddata files for Arabic using Scheherazade font
+
+## Finetuned traineddata files for Arabic using Scheherazade font
 
 Test files for https://github.com/tesseract-ocr/tesseract/issues/2132
 
