@@ -1,10 +1,37 @@
 # tessdata_arabic
 
+## 2019-02-19 Finetuned from `script/Arabic` - ara-1.traineddata
+
+PlusMinus Finetune Trained using fonts 
+```
+'Amiri Bold' \
+'Amiri' \
+'Arab' \
+'Scheherazade Bold' \
+'Scheherazade' \
+'Traditional Arabic' \
+```
+
+Traineddata Info
+```
+combine_tessdata -d ara-1.traineddata
+
+Version string:4.0.0-313-gfc47
+0:config:size=405, offset=192
+17:lstm:size=7511187, offset=597
+18:lstm-punc-dawg:size=98, offset=7511784
+19:lstm-word-dawg:size=2018514, offset=7511882
+20:lstm-number-dawg:size=3658, offset=9530396
+21:lstm-unicharset:size=7794, offset=9534054
+22:lstm-recoder:size=1012, offset=9541848
+23:version:size=15, offset=9542860
+```
+
 ## Finetuned traineddata files for Arabic using Scheherazade font
 
 Test files for https://github.com/tesseract-ocr/tesseract/issues/2132
 
-### finetuned for Impact 
+### finetuned for Impact - ara-Scheherazade_Impact_400.traineddata
 
 ```
 combine_tessdata -d ara-Scheherazade_Impact_400.traineddata
@@ -20,10 +47,11 @@ Version string:4.00.00alpha:ara:synth20170629:[1,48,0,1Ct3,3,16Mp3,3Lfys64Lfx96L
 23:version:size=80, offset=12603640
 ```
 
-### Finetuned for PlusMinus
+### Finetuned for PlusMinus - ara-Scheherazade_PlusMinus_4000.traineddata
 
 ```
-combine_tessdata -d ara-Scheherazade_PlusMinus_400.traineddata
+combine_tessdata -d ara-Scheherazade_PlusMinus_4000.traineddata
+
 Version string:4.0.0-118-gd44b5
 0:config:size=405, offset=192
 17:lstm:size=11619331, offset=597
@@ -33,4 +61,5 @@ Version string:4.0.0-118-gd44b5
 21:lstm-unicharset:size=6460, offset=13267214
 22:lstm-recoder:size=850, offset=13273674
 23:version:size=16, offset=13274524
+
 ```
