@@ -6,8 +6,8 @@
 ################################################################
 # variables to set tasks performed
 ################################################################
-MakeEval=yes
-MakePlusMinus=yes
+MakeEval=NO
+MakePlusMinus=NO
 RunPlusTraining=yes
 RunEval=yes
 ################################################################l
@@ -128,7 +128,7 @@ fi
 
 if [ $RunPlusTraining = "yes" ]; then
 
-for ((PlusMinusIterations=4300; PlusMinusIterations<=7000; PlusMinusIterations+=1000)); do
+for ((PlusMinusIterations=6300; PlusMinusIterations<=7300; PlusMinusIterations+=500)); do
    
     echo "#### Plus-Minus training Using Amiri text #####"
     lstmtraining \
@@ -173,7 +173,7 @@ tesseract $eval_output_dir/ara.Amiri.exp0.tif ara.Amiri.exp0-$ModelName-eval --t
 
 wdiff --no-common --statistics ./ara.Amiri.exp0-$ModelName-eval.txt $langdata_dir/$Lang/$Lang.evalnew.training_text 
 
-tesseract /home/ubuntu/tessdata_arabic/Arabic-TOC.tif /home/ubuntu/tessdata_arabic/Arabic-TOC-ara-Amiri  --tessdata-dir ./ara-Amiri-from-Arabic  --oem 1 --psm 6 -l ara-Amiri
+tesseract /home/ubuntu/tessdata_arabic/Arabic-TOC.png /home/ubuntu/tessdata_arabic/Arabic-TOC-ara-Amiri  --tessdata-dir ./ara-Amiri-from-Arabic  --oem 1 --psm 6 -l ara-Amiri
 
 tesseract /home/ubuntu/tessdata_arabic/Arabic-TOC-numbers.png /home/ubuntu/tessdata_arabic/Arabic-TOC-numbers-ara-Amiri  --tessdata-dir ./ara-Amiri-from-Arabic   --oem 1 --psm 6 -l ara-Amiri
 
