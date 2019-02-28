@@ -210,10 +210,12 @@ if [ $RunEval = "yes" ]; then
         --eval_listfile  ~/tesstutorial/aratest/$Lang.training_files.txt 
     
 tesseract /home/ubuntu/tesstutorial/aratest/ara.Amiri.exp0.tif ../ara.Amiri.exp0-$ModelName --tessdata-dir $trained_output_dir  --oem 1 --psm 6 -l $ModelName
-
+ tesseract /home/ubuntu/tesstutorial/aratest/ara.Amiri.exp0.tif ../ara.Amiri.exp0-$ModelName-best --tessdata-dir ~/tessdata_best --oem 1 --psm 6 -l ara
+ tesseract /home/ubuntu/tesstutorial/aratest/ara.Amiri.exp0.tif ../ara.Amiri.exp0-$ModelName-fast --tessdata-dir ~/tessdata_fast --oem 1 --psm 6 -l ara
+ 
 wdiff --no-common --statistics ../ara.Amiri.exp0-$ModelName.txt  /home/ubuntu/tessdata_arabic/langdata/ara/ara.testdeco.training_text
 
-cp /home/ubuntu/tesstutorial/aratest/ara.Amiri.exp0.tif  ../ara.Amiri.exp0-$ModelName.tif
+convert /home/ubuntu/tesstutorial/aratest/ara.Amiri.exp0.tif  ../ara.Amiri.exp0-$ModelName.png
 cp  /home/ubuntu/tessdata_arabic/langdata/ara/ara.testdeco.training_text  ../ara.Amiri.exp0-$ModelName.testdeco.gt.txt
 
 tesseract /home/ubuntu/tessdata_arabic/Arabic-TOC.png /home/ubuntu/tessdata_arabic/Arabic-TOC-$ModelName  --tessdata-dir ../ --oem 1 --psm 6 -l $ModelName
